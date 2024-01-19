@@ -2,14 +2,17 @@
 const express = require("express");
 const fs = require('fs');
 const path = require('path');
+const { serialize } = require("v8");
 
 const app = express();
 app.use(express.urlencoded({extended: true}));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/public/index");
+    res.render("index",{device : []});
 })
 
 app.use(express.json());
@@ -20,28 +23,40 @@ app.post('/searchDevice', (req, res) => {
 
     if (!deviceName && !panel) {
         return res.status(400).json({ error: 'Enter any one value ....' });
-    }
-    else if (panel && deviceName) {
-        const panelFilePath = path.join(jsonFilesDirectory, `${panel}.json`);
-        const searchResults = []; 
-        searchInPanel(panelFilePath, deviceName, searchResults);
-        res.json(searchResults); 
-    } 
-    else if(deviceName && !panel){
-        const allPanelFiles = fs.readdirSync(jsonFilesDirectory);
-        const searchResults = [];
+    } else if (panel && deviceName) {
+        try{
+            const panelFilePath = path.join(jsonFilesDirectory, `${panel}.json`);
+            const searchResults = [];
+            searchInPanel(panelFilePath, deviceName, searchResults);
+            res.render("index", { device: searchResults });
+        }catch(error){
+            console.error(`Error reading or parsing ${panelFilePath}:`, error);
+            res.render("index", { device: [] });
+        }
+    } else if (deviceName && !panel) {
+        try{
+            const allPanelFiles = fs.readdirSync(jsonFilesDirectory);
+            const searchResults = [];
 
-        allPanelFiles.forEach((panelFile) => {
+            allPanelFiles.forEach((panelFile) => {
             const panelFilePath = path.join(jsonFilesDirectory, panelFile);
             searchInPanel(panelFilePath, deviceName, searchResults);
-        });
-
-        res.json(searchResults);
-    }
-    else{
-        const panelFilePath = path.join(jsonFilesDirectory, `${panel}.json`);
-        const panelData = JSON.parse(fs.readFileSync(panelFilePath, 'utf8'));
-        res.json(panelData);
+            });
+            res.render("index", { device: searchResults });
+        } catch(error){
+            console.error(`Error reading or parsing ${panelFilePath}:`, error);
+            res.render("index", { device: [] });
+        }
+        
+    } else {
+        try {
+            const panelFilePath = path.join(jsonFilesDirectory, `${panel}.json`);
+            const panelData = JSON.parse(fs.readFileSync(panelFilePath, 'utf8'));
+            res.render("index", { device: panelData });
+        } catch (error) {
+            console.error(`Error reading or parsing ${panelFilePath}:`, error);
+            res.render("index", { device: [] });
+        }
     }
 });
 
