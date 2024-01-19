@@ -10,6 +10,7 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/index");
 })
 
+
 const port = process.env.PORT || 8080
 app.listen(port, () => {
     console.log(`the server is running on port ${port}`);
