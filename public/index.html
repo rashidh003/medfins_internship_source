@@ -11,15 +11,15 @@
         <div id="side-pannel" class="p-10 w-3/5 h-3/5 rounded-lg bg-white">
             <div id="side-content" class="w-full flex flex-col">
                 <h1 class="text-gray-600 font-mono font-bold text-3xl">SEARCH DB:</h1>
-                <form id="queryForm" class="py-10 flex w-full items-center justify-around h-full">
+                <form id="queryForm" action="/searchDevice" method="post" class="py-10 flex w-full items-center justify-around h-full">
                     <div>
                         <label class="font-mono font-xl block" for="deviceName">Device Name:</label>
                         <input class="border-2 border-blue-400 p-3" type="text" name="deviceName" placeholder="Name of the Device">
                     </div>
                     <div>
                         <label class="font-mono font-xl block" for="panel">Panel:</label>
-                        <select class="border-2 border-blue-400 p-3 bg-white text-gray-500" name = "panel">
-                            <option value = "NULL" selected>Select the Panel</option>
+                        <select class="border-2 border-blue-400 p-3 bg-white text-black" name = "panel">
+                            <option value = "" selected>Select the Panel (NONE)</option>
                             <option value = "Anesthesiology">Anesthesiology</option>
                             <option value = "cardiovascular">cardiovascular</option>
                             <option value = "Dental">Dental</option>
