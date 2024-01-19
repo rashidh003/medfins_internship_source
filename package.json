@@ -1,0 +1,28 @@
+{
+  "name": "medfins_intern",
+  "version": "1.0.0",
+  "description": "start the server by **\"node server.js\"**",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+[
+  {
+    "sno": 1,
+    "deviceName": "Device 1",
+    "intendedUse": "Medical",
+    "riskClass": "Class I"
+  },
+  {
+    "sno": 2,
+    "deviceName": "Device 2",
+    "intendedUse": "Consumer Electronics",
+    "riskClass": "Class II"
+  },
+  // Add more devices as needed
+]
