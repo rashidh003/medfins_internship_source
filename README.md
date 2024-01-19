@@ -1,1 +1,1 @@
-start the server by **"npm run start"**
+start the server by **"node server.js"**
