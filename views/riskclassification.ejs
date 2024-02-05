@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <title>MEDFINS</title>
+</head>
+<body class="font-mono">
+    <nav class="bg-violet-300 flex justify-between z-10 top-0 overflow-y-visible fixed w-full items-center py-5 px-5 md:px-10">
+        <img class="w-28" src="images/Medfins_logo.png" alt="">
+        <div class="flex nav-part pt-20 gap-7 p-10 h-screen z-10 fixed w-4/5 bg-violet-800 text-white top-0 flex-col items-starts md:hidden">
+            <span class="x-button text-white absolute top-0 left-0 p-5"><i class="fa-solid fa-xl fa-xmark"></i></span>
+            <a class="hover:text-violet-300" href="#">Home</a>
+            <a class="hover:text-violet-300" href="#">OurStory</a>
+            <a class="hover:text-violet-300" href="#">Countries</a>
+            <div class="flex flex-col">
+                <a class="expertise hover:text-violet-600 mb-3" href="#">Expertise<i class="ml-2 fa-solid fa-arrow-down"></i></a>
+                <div class="hidden drop-down ml-3 text-white gap-2 flex-col justify-around items-start">
+                    <a class="hover:text-violet-300" href="#">Medical Devices</a>
+                    <a class="hover:text-violet-300" href="#">Software as Medical Device</a>
+                    <a class="hover:text-violet-300" href="#">Radiation Emitting</a>
+                    <a class="hover:text-violet-300" href="#">Drug Combination Device</a>
+                </div>
+            </div>
+            <a class="hover:text-violet-600" href="#">Resource</a>
+            <a class="text-white w-24 text-center border-2 mt-auto ml-auto border-violet-200 py-2 px-3 rounded-2xl" href="#">logIn</a>
+        </div>
+        <div class=" hidden links items-center justify-around gap-x-9 relative md:flex">
+            <a class="hover:text-violet-700" href="#">Home</a>
+            <a class="hover:text-violet-700" href="#">OurStory</a>
+            <a class="hover:text-violet-700" href="#">Countries</a>
+              <div class="drop-menu">
+                <a class="expertise-link hover:text-violet-600 mb-3" href="#">Expertise<i class="ml-2 fa-solid fa-arrow-down"></i></a>
+                <div class="absolute dropdown flex flex-col z-20 text-white h-[18rem] w-[20rem] top-9 rounded-lg  p-5 justify-around items-start">
+                    <a class="hover:text-white" href="#"><i class="fa-solid fa-arrow-right-long mr-2"></i>Medical Devices</a>
+                    <a class="hover:text-white" href="#"><i class="fa-solid fa-arrow-right-long mr-2"></i>Software as Medical Device</a>
+                    <a class="hover:text-white" href="#"><i class="fa-solid fa-arrow-right-long mr-2"></i>Radiation Emitting</a>
+                    <a class="hover:text-white" href="#"><i class="fa-solid fa-arrow-right-long mr-2"></i>Drug Combination Device</a>
+                </div>
+              </div>
+              <a class="hover:text-violet-600" href="#">Resource</a>
+              <button class="text-violet-700 hover:bg-violet-400 w-24 text-center border-2 border-violet-200 py-2 px-3 rounded-2xl" href="#">logIn</button>
+          </div>
+        <span class="md:hidden"><i class="text-violet-800 burger fa-2xl fa-solid fa-burger"></i></span>
+    </nav>
+    <div class="flex hero pt-[12rem] md:pt-[20rem] pb-32 bg-cover  justify-center overflow-hidden w-full items-center">
+        <div class="flex input-box flex-col items-center relative bg-gray-300 rounded-2xl p-5 md:p-10">
+            <div class="absolute text-center w-3/5 bg-violet-100 rounded-xl p-3 top-[-1.5rem] md:top-[-3rem] md:p-6">
+                <h1 class="text-xl md:text-2xl">Search DB</h1>
+            </div>
+            <form action="/searchDevice" method="post" class="py-10 flex flex-col justify-between items-center w-full">
+                <div class="gap-x-5 flex flex-col md:flex-row">
+                    <div class="mb-5 md:mb-10 w-full">
+                        <label class="font-mono font-xl block" for="deviceName">Device Name:</label>
+                        <input class="rounded-xl w-full border-2 border-violet-500 p-3" type="text" name="deviceName" id="deviceName" placeholder="Name of the Device">
+                    </div>
+                    <div class="mb-5 md:mb-10 w-full">
+                        <label class="font-mono font-xl block" for="panel">Panel:</label>
+                        <select class="border-2 border-violet-500 rounded-xl p-3 bg-white text-black" name = "panel" id="panel">
+                            <option value = "" selected>Select the Panel (NONE)</option>
+                            <option value = "Anesthesiology">Anesthesiology</option>
+                            <option value = "cardiovascular">cardiovascular</option>
+                            <option value = "Dental">Dental</option>
+                            <option value = "Dermatolical & Plastic Surgery">Dermatolical & Plastic Surgery</option>
+                            <option value = "ENT">ENT</option>
+                            <option value = "Gastroenterology">Gastroenterology</option>
+                            <option value = "Interventional Radiology">Interventional Radiology</option>
+                            <option value = "Nephrology and Renal Care">Nephrology and Renal Care</option>
+                            <option value = "Neurological">Neurological</option>
+                            <option value = "Notice Updated General Hospital classification 16.3.2022">General Hospital</option>
+                            <option value = "Obstetrical and Gynecological">Obstetrical and Gynecological</option>
+                            <option value = "Oncology">Oncology</option>
+                            <option value = "Operation Theatre">Operation Theatre</option>
+                            <option value = "Ophthalmology">Ophthalmology</option>
+                            <option value = "Pain management">Pain management</option>
+                            <option value = "Pediatrics & Neonatalogy">Pediatrics & Neonatalogy</option>
+                            <option value = "Personal Protective Equipment">Personal Protective Equipment</option>
+                            <option value = "Physical Support">Physical Support</option>
+                            <option value = "Radiotherapy">Radiotherapy</option>
+                            <option value = "Rehabilitation">Rehabilitation</option>
+                            <option value = "Respiratory">Respiratory</option>
+                            <option value = "Software">Software</option>
+                            <option value = "surgical instrument classifcation 9.9.22">surgical instrument</option>
+                            <option value = "urology">urology</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="absolute  bottom-[-1.5rem] px-10 py-3 font-semibold text-l md:text-xl rounded-lg text-white bg-black"> Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="items-start mb-24 text-sm justify-center flex w-full">
+        <div class="overflow-y-scroll h-1/2 w-full md:w-9/12  md:rounded-xl">
+            <table class="relative text-center table-fixed p-5 bg-violet-100 text-black w-full">
+                <thead class="text-black top-0 bg-blue-300">
+                    <tr>
+                        <th>Device Name</th>
+                        <th>Intended Use</th>
+                        <th class="w-20 md:w-28 p-2 md:p-5">Risk Class</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% device.forEach(device => { %>
+                        <tr class="md:py-5">
+                            <td class="border-l-2 p-2 overflow-x-scroll md:overflow-hidden md:p-5 border-b-2 border-black"><%- device["Device Name"]%></td>
+                            <td class="border-l-2 p-2 overflow-x-scroll md:overflow-hidden text-left md:p-5 border-b-2 border-black"><%- device["Intended Use"] %></td>
+                            <td class="border-x-2 p-2 overflow-x-scroll md:overflow-hidden md:p-5 border-b-2 border-black"><%- device["Risk Class"] %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+ 
+<script src="app.js"></script>
+</body>
+</html>

@@ -11,3 +11,170 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+  
+  
+.dropdown{
+  visibility: hidden;
+  /* background: linear-gradient(to right, #8e44ad, #5d3b6b); */
+}
+.dropdown-2{
+  visibility: hidden;
+}
+.dropdown-3{
+  visibility: hidden;
+}
+.dropdown-4{
+  visibility: hidden;
+}
+
+.dropdown-5{
+  visibility: hidden;
+}
+
+.dropdown-6{
+  visibility: hidden;
+}
+
+.dropdown-7{
+  visibility: hidden;
+}
+
+.dropdown-8{
+  visibility: hidden;
+}
+
+.dropdown-9{
+  visibility: hidden;
+}
+
+.dropdown-10{
+  visibility: hidden;
+}
+
+.dropdown-11{
+  visibility: hidden;
+}
+
+.dropdown-12{
+  visibility: hidden;
+}
+
+.dropdown-13{
+  visibility: hidden;
+}
+
+.dropdown-14{
+  visibility: hidden;
+}
+.dropdown-15{
+  visibility: hidden;
+}
+
+.flex{
+  display: flex;
+}
+.nav-part{
+  right: -100%;
+  transition: all 0.3s ease;
+}
+.slideIn{
+  right: 0;
+}
+
+/* .hero{
+  background-image: url(images/New\ Project.png);
+} */
+
+.nav-part-md{
+  right: 0;
+}
+
+.links a {
+  position: relative;
+  text-decoration: none;
+}
+
+.links a::before {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 1px;
+  background-color: rgb(67, 4, 80);
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+.links a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.input-box{
+  background: linear-gradient(to right, #87CEEB, #8A2BE2);
+}
+.input-box::before{
+  content: url(images/Medicine.gif);
+  position: absolute;
+  z-index: -1;
+  left: -13rem;
+  top: -6rem;
+}
+
+/* .hero::before{
+  content: '';
+  position: absolute;
+  border-radius: 100%;
+  top: 5rem;
+  right: 10rem;
+  background-color: rgb(250, 191, 250);
+  height: 70%;
+  width: 40%;
+} */
+
+ /* background-color:#C4B5FD; */
+
+ .highlight {
+  background-color: violet;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url('./fonts/Poppins-Bold.woff2') format('woff2'),
+       url('./fonts/Poppins-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Poppins-Thin';
+  src: url('./fonts/Poppins-Thin.woff2') format('woff2'),
+       url('./fonts/Poppins-Thin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: url('./fonts/Poppins-Regular.woff2') format('woff2'),
+       url('./fonts/Poppins-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Poppins-Light';
+  src: url('./fonts/Poppins-Light.woff2') format('woff2'),
+       url('./fonts/Poppins-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Poppins-SemiBold';
+  src: url('./fonts/Poppins-SemiBold.woff2') format('woff2'),
+       url('./fonts/Poppins-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Poppins-Medium';
+  src: url('./fonts/Poppins-Medium.woff2') format('woff2'),
+       url('./fonts/Poppins-Medium.woff') format('woff');
+}
+
+
